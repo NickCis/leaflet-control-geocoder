@@ -4,10 +4,10 @@
 	<title>Leaflet Control Geocoder</title>
 
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-	<link rel="stylesheet" href="../Control.Geocoder.css" />
+	<link rel="stylesheet" href="../dist/Control.Geocoder.css" />
 
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet-src.js"></script>
-	<script src="../Control.Geocoder.js"></script>
+	<script src="../dist/Control.Geocoder.js"></script>
 	<style type="text/css">
 		body {
 			margin: 0;
@@ -28,7 +28,11 @@
 		    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(map);
 		L.control.scale({position:'topleft'}).addTo(map);
-		L.Control.geocoder({position:'topleft', showResultIcons:true}).addTo(map);
+		L.Control.geocoder({
+			position:'topleft',
+			showResultIcons:true,
+			geocoder: L.Control.Geocoder.bacomollego()
+		}).addTo(map);
 	</script>
 </body>
 </html>
